@@ -1,2 +1,0 @@
-mount -t cifs -o username=(votre user),password=(votre mdp) //(lien de votre fichier)  /mnt
-
