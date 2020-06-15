@@ -1,0 +1,173 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f5\fnil\fprq2\fcharset0 Microsoft YaHei;}{\f6\fswiss\fprq0\fcharset128 Arial;}{\f7\fnil\fprq2\fcharset0 Arial;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\s0\snext0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1 Normal;}
+{\s15\sbasedon0\snext16\dbch\af5\dbch\af7\afs28\sb240\sa120\keepn\loch\f4\fs28 Titre;}
+{\s16\sbasedon0\snext16\sl276\slmult1\sb0\sa140 Corps de texte;}
+{\s17\sbasedon16\snext17\dbch\af6\sl276\slmult1\sb0\sa140 Liste;}
+{\s18\sbasedon0\snext18\dbch\af6\afs24\ai\sb120\sa120\noline\fs24\i L\u233\'e9gende;}
+{\s19\sbasedon0\snext19\dbch\af6\noline Index;}
+}{\*\generator LibreOffice/6.3.0.4$Windows_X86_64 LibreOffice_project/057fc023c990d676a43019934386b85b21a9ee99}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr2020\mo1\dy21\hr16\min7}{\printim\yr0\mo0\dy0\hr0\min0}}{\*\userprops}\deftab709
+\viewscale100
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn11906\pghsxn16838\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\pgdscnxt0 Style par d\u233\'e9faut;}}
+\formshade\paperh16838\paperw11906\margl1134\margr1134\margt1134\margb1134\sectd\sbknone\sectunlocked1\pgndec\pgwsxn11906\pghsxn16838\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+{\*\ftnsep\chftnsep}\pgndec\pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\loch
+Le serveur envoie une diffusion et quand elle est envoy\u233\'e9e elle est re\u231\'e7u par le switch. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\loch
+Celui-ci va mettre \u224\'e0 jour sa table MAC de l\u8217\'92\u233\'e9metteur. Ensuite il va regarder si il conna\u238\'eet l\u8217\'92adresse mac de destination (FFFFFFFF, adresse mac de diffusion) puis l\u8217\'92envoie \u224\'e0 tout le monde. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\loch
+Dans un montage en boucle, deux switch, plusieurs poste clients / serveurs, on obtient une }{\rtlch\ab \ltrch\b\loch
+temp\u234\'eate de diffusion}{\rtlch\ab0 \ltrch\b0\loch
+ c\u8217\'92est \u224\'e0 dire que la trame ne s\u8217\'92arr\u234\'eate pas \u224\'e0 un poste, elle va d\u8217\'92un switch \u224\'e0 l\u8217\'92autre et vise vers \u231\'e7a. \u8594\'3fcr\u233\'e9ation d\u8217\'92une boucle inter-switch. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+La temp\u234\'eate de diffusion est l\u8217\'92un des probl\u232\'e8mes connus dans les boucles.}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Les informations dans une table MAC sont \u224\'e0 un moment donn\u233\'e9, enlev\u233\'e9 donc on v\u233\'e9rifie le TTL (Time To Lie, temps de vie de l\u8217\'92information). Ensuite on met \u224\'e0 jour le destinataire. }{\rtlch\ab0 \ltrch\b0\loch
+Le second switch va faire de m\u234\'eame. Le destinataire risque de }{\rtlch\ab \ltrch\b\loch
+recevoir plusieurs fois la m\u234\'eame trame en boucle. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Pour supprimer une boucle il suffit juste de couper un lien qui cr\u233\'e9ait la boucle. Il faut cr\u233\'e9er un \u171\'ab\~arbre\~\u187\'bb pour connect\u233\'e9 les switchs. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Pour trouver la boucle il faut utiliser l\u8217\'92algo par d\u233\'e9fauts des Switch pour d\u233\'e9tect\u233\'e9 un circuit ou une boucle pour d\u233\'e9sactiver les liens qu\u8217\'92il faut. En cas de panne, l\u8217\'92autre lien peut se r\u233\'e9activer pour que le r\u233\'e9seau fonctionne normalement. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Cet algo fait \u224\'e0 la fois d\u233\'e9tection de boucle et en cas de panne.}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab \ltrch\b\loch
+Protocole STP \u8594\'3f Spanning Tree Protocol}{\rtlch\ab0 \ltrch\b0\loch
+. Parmis tous les switchs ils vont \u233\'e9lire un switch racine et l\u8217\'92algo dit qu\u8217\'92une fois cette \u233\'e9lection faite, il va avoir tout ses liens \u224\'e0 l\u8217\'92\u233\'e9tat actif (forward). Tous les autres switch sont forc\u233\'e9ment \u224\'e0 l\u8217\'92\u233\'e9tat actif. Ensuite on a le cas o\u249\'f9 aucun switch n\u8217\'92est racine, il y a donc un des deux liens qui va se mettre \u224\'e0 l\u8217\'92\u233\'e9tat actif et l\u8217\'92autre forward. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Pour r\u233\'e9sum\u233\'e9, tous les liens vers le switch racine doivent \u234\'eatre possible en passant par un chemin, qu\u8217\'92importe, et tous les liens autour du switch racine sont actifs. Pour l\u8217\'92\u233\'e9lire, ils ont un identifiant et le plus petit d\u8217\'92entre eux est le switch racine. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Cet algorithme est r\u233\'e9p\u233\'e9t\u233\'e9 et r\u233\'e9guli\u232\'e8rement pour \u233\'e9viter les probl\u232\'e8mes pr\u233\'e9c\u233\'e9dents. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+On voit ce protocole quand on doit mettre un switch avec le pc, on a normalement des liens qui vont se mettre automatiquement \u224\'e0 l\u8217\'92\u233\'e9tat orange, le STP va d\u233\'e9sactiver les liens. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Questions\~: }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Quel est le r\u244\'f4le du protocole spanning tree \u8594\'3f \u233\'e9viter les boucles }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+le spanning tree le d\u233\'e9sactive pour \u233\'e9viter les boucles. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Quand A va envoyer une trame pour noter son adresse MAC}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+il envoie \u224\'e0 tout le monde pour savoir o\u249\'f9 se situe l\u8217\'92adresse DHCP (DHCP discover)}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+\u224\'e0 tout le monde car B n\u8217\'92a pas envoy\u233\'e9 de trame. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Le STP s\u8217\'92est mis en route en d\u233\'e9sactivant les ports il a \u233\'e9lit un switch racine qui est le 1. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+-----------------------------------------------------------------------------------------------------------------------}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar{\rtlch\ab \ltrch\b\loch
+Le Routeur CISCO}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\qc\ltrpar\rtlch\ab \ltrch\b\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Non Volatile RAM \u8594\'3f super flash, running config. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+cette m\u233\'e9moire vive non volatile, CISCO l\u8217\'92appel la \u171\'ab\~startup\~\u187\'bb. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+La RAM c\u8217\'92est Running et est la volatile. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ab0 \ltrch\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Si j\u8217\'92\u233\'e9teins mon routeur je p\u232\'e8re en running et en startup je le garde. L\u224\'e0 dedans, dans la m\u233\'e9moire flash, c\u8217\'92est l\u224\'e0 qu\u8217\'92on va mettre l\u8217\'92OS de CISCO.  }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Il est important de savoir \u231\'e7a car au d\u233\'e9marrage du routeur on a lecture de la flash en m\u233\'e9moire et ensuite la configuration qui se trouve dans la NVRAM est copi\u233\'e9 dans la running. Ce que j\u8217\'92ai dans le NVRAM est mis dans la RAM pour \u234\'eatre dispo \u224\'e0 l\u8217\'92utilisateur. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ab0 \ltrch\b0\loch
+Toutes les modifications faites sont stock\u233\'e9s dans la running. \u199\'c7a veut dire que lorsqu\u8217\'92on configure du router il faut faire r\u233\'e9guli\u232\'e8rement une copie du running dans la startup-config. Cette commande doit \u234\'eatre faite r\u233\'e9guli\u232\'e8rement. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai\ab \ltrch\i\b\loch
+Copy run start}{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+ }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Tout commence par la flash, on va lire le fichier qui contient l\u8217\'92os de notre dispositif (.bin), en fonction de la version l\u8217\'92os on va avoir des fonctions actives ou non, il est ensuite charg\u233\'e9 dans la m\u233\'e9moire vive apr\u232\'e8s on se base dessus pour copier la NVRAM vers la running config et \u224\'e0 ce moment l\u224\'e0 on peut travailler sur la configuration. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab \ltrch\i0\b\loch
+Routeur> enable }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab \ltrch\i0\b\loch
+Routeur# show / sh}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab \ltrch\i0\b\loch
+Routeur# configuration terminal / conf t}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab \ltrch\i0\b\loch
+Routeur(config)# interface (nom de l\u8217\'92interface)}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+on tape enable, configuration terminal. Pour remonter d\u8217\'92un niveau \u171\'ab\~exit\~\u187\'bb et pour aller directement au mode privil\u233\'e9gi\u233\'e9 on tape \u171\'ab\~end\~\u187\'bb. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+La route par d\u233\'e9faut est utilis\u233\'e9 en dernier et prise si il y a rien \u224\'e0 prendre. Elle se note 0,0,0,0/0 en passerelle le prochain routeur}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+pour delete un ip route \u8594\'3f revenir sur la m\u234\'eame instruction avec no devant}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\pagebb\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Ip \u8594\'3f protocole routable\~: }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+permet de sortir du r\u233\'e9seau avec une partie r\u233\'e9seau et une partie poste. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Dans une adresse mac elle n\u8217\'92a d\u8217\'92existence uniquement dans un r\u233\'e9seau local. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Le routeur agit au niveau de la couche 3 pour interconnect\u233\'e9 les dispositifs chaque interface = une adresse ip diff\u233\'e9rente. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Ip/PCA \u8594\'3f v\u233\'e9rification du masque de PCC est la m\u234\'eame que la sienne}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+envoie du paquet \u224\'e0 la passerelle par d\u233\'e9faut .}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Il va regarder sa table de routage et va passer par une interface ip du routeurA pour checker si le r\u233\'e9seau de destination est une interface connect\u233\'e9 au dernier. Le routeur A fait un protocole ARP pour envoyer le paquet au pc A.}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+Le routeur A pour envoyer \u224\'e0 pcB la seule chose qu\u8217\'92il conna\u238\'eet c\u8217\'92est le prochain saut en envoyant au Routeur C. }
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+je fais appel \u224\'e0 mon routeur pour changer de r\u233\'e9seau}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar\rtlch\ai\ab0 \ltrch\i\b0\loch
+
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+table de routage\~:}
+\par \pard\plain \s0\hich\af3\dbch\af8\langfe2052\dbch\af7\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1036\kerning1\ql\ltrpar{\rtlch\ai0\ab0 \ltrch\i0\b0\loch
+desti | envoyeur | passerelle du prochain routeur| interface \u224\'e0 toucher}
+\par }
